@@ -2,21 +2,28 @@ import { Component } from 'react';
 
 export default class App extends Component {
 	state = {
-		goOut: true
+		count: 0
 	};
 
-	toggleGoOut = () => {
-		this.setState((prevState) => ({
-			goOut: !prevState.goOut
-		}));
-	};
 	render() {
+		const add = () => {
+			this.setState((prevCount) => ({ count: prevCount.count + 1 }));
+		};
+
+		const subtract = () => {
+			this.setState((prevCount) => ({ count: prevCount.count - 1 }));
+		};
 		return (
-			<div className="state">
-				<h1 className="state--title">Should I go out tonight?</h1>
-				<div className="state--value" onClick={this.toggleGoOut}>
-					<h1>{this.state.goOut ? 'Yes' : 'No'}</h1>
+			<div className="counter">
+				<button className="counter--minus" onClick={subtract}>
+					–
+				</button>
+				<div className="counter--count">
+					<h1>{this.state.count}</h1>
 				</div>
+				<button className="counter--plus" onClick={add}>
+					+
+				</button>
 			</div>
 		);
 	}

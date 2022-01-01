@@ -8,53 +8,41 @@ body {
 	background-color: #262626;
 	color: #d9d9d9;
 	padding: 20px;
-	height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-.counter {
-	display: flex;
-	align-items: flex-end;
+input,
+textarea {
+	margin-bottom: 10px;
+	font-family: 'Inter', sans-serif;
 }
 
-.counter > button {
-	height: 50px;
-	width: 50px;
-	border-radius: 50%;
+input[type='text'],
+input[type='email'] {
+	width: 100%;
+	border-radius: 3px;
 	border: none;
-	cursor: pointer;
-	background-color: #737373;
-	color: #d9d9d9;
-	font-size: 1.5rem;
+	height: 30px;
+	margin-bottom: 10px;
+	text-indent: 5px;
 }
 
-.counter > button:hover {
-	background-color: #404040;
-	color: #d9d9d9;
+input[type='radio'],
+input[type='checkbox'] {
+	margin-right: 7px;
 }
 
-.counter > button:focus {
-	outline: none;
+textarea {
+	width: 100%;
+	border-radius: 3px;
+	border: none;
+	height: 70px;
+	margin-bottom: 10px;
+	text-indent: 5px;
 }
 
-.counter--count {
-	background-color: white;
-	height: 100px;
-	width: 100px;
-	border-radius: 50%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: #262626;
-}
-
-.counter--plus {
-	margin-left: -20px;
-}
-
-.counter--minus {
-	margin-right: -20px;
-	z-index: 1;
+label.favColor {
+	display: block;
 }

@@ -4,24 +4,23 @@ export default class App extends Component {
 	state = {
 		count: 0
 	};
+	add = () => {
+		this.setState((prevState) => ({ count: prevState.count + 1 }));
+	};
 
+	subtract = () => {
+		this.setState((prevState) => ({ count: prevState.count - 1 }));
+	};
 	render() {
-		const add = () => {
-			this.setState((prevCount) => ({ count: prevCount.count + 1 }));
-		};
-
-		const subtract = () => {
-			this.setState((prevCount) => ({ count: prevCount.count - 1 }));
-		};
 		return (
 			<div className="counter">
-				<button className="counter--minus" onClick={subtract}>
+				<button className="counter--minus" onClick={this.subtract}>
 					–
 				</button>
 				<div className="counter--count">
 					<h1>{this.state.count}</h1>
 				</div>
-				<button className="counter--plus" onClick={add}>
+				<button className="counter--plus" onClick={this.add}>
 					+
 				</button>
 			</div>

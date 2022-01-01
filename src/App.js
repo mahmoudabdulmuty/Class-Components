@@ -1,16 +1,23 @@
 import { Component } from 'react';
 
 export default class App extends Component {
-	state = {
-		count: 0
-	};
-	add = () => {
-		this.setState((prevState) => ({ count: prevState.count + 1 }));
-	};
+	constructor(props) {
+		super(props);
+		this.state = {
+			count: 0
+		};
+		this.add = this.add.bind(this);
+		this.subtract = this.subtract.bind(this);
+	}
 
-	subtract = () => {
+	add() {
+		this.setState((prevState) => ({ count: prevState.count + 1 }));
+	}
+
+	subtract() {
 		this.setState((prevState) => ({ count: prevState.count - 1 }));
-	};
+	}
+
 	render() {
 		return (
 			<div className="counter">
